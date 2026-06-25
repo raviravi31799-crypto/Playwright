@@ -5,7 +5,7 @@ test("Login",async({page})=>{
     await page.locator("//i[@class='fa fa-lock']").click();
     const loginpanel=await page.getByText("Login to your account");
     await expect(loginpanel).toBeVisible();
-    await page.locator("//input[@data-qa='login-email']").fill("Usha@gmail.com");
+    await page.locator("//input[@data-qa='login-email']").fill("UshaRanjith@gmail.com");
     await page.locator("//input[@data-qa='login-password']").fill("Usha15");
     await page.locator("//button[@data-qa='login-button']").click();
     const Name=await page.locator("//i[@class='fa fa-user']/parent::a").textContent();
