@@ -9,7 +9,7 @@ test("Login",async({page})=>{
     await page.locator("//input[@data-qa='login-password']").fill("Usha15");
     await page.locator("//button[@data-qa='login-button']").click();
     const Name=await page.locator("//i[@class='fa fa-user']/parent::a").textContent();
-    await expect(Name).toEqual(" Logged in as Usha");
+    await expect(Name).toEqual(" Logged in as Joshi");
     console.log("User name is visible");
     const Delete=await page.locator("//i[@class='fa fa-trash-o']/parent::a");
     await Delete.click();
