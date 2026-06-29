@@ -1,18 +1,17 @@
-import{test,expect} from "@playwright/test";
-test("Frames",async({page})=>
-{
+import {test,expect,chromium} from "@playwright/test";
+
+test("Frames",async({page})=>{
     await page.goto("https://letcode.in/frame");
     const allframes=page.frames();
-    console.log("No.of frames:"+allframes.length);
-    const myframe=page.frame("firstFr");
-    await myframe?.fill("input[name='fname']","Joshi");
-    await myframe?.fill("input[name='lname']","Rathod");
-    const frame=page.frameLocator('iframe[name="firstFr"]');
-    await expect(frame.locator("p.text-sm.font-semibold.text-centre")).toContainText("Joshi");
-   // await expect(frame.locator("p.text-sm.font-semibold.text-centre")).toContainText("Rathod");
+    console.log("No of frames:"+allframes.length);
+    const myFrame=page.frame('firstFr');
+    await myFrame?.fill("input[name='fname']","john");
+    await myFrame?.fill("input[name='lname']","jeck");
 
-    
-});
+    await page.waitForTimeout(3000);
+    const frame=page.frameLocator('iframe[name="firstFr"]');
+    await expect(frame.locator("p.text-sm.font-semibold.text-center")).toContainText('john');
+})
  //innerframe
 
 
