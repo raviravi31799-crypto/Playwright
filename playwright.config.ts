@@ -13,6 +13,9 @@ const envName=process.env.ENV
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+ // repeatEach:2,
+
+  //retries:2,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -25,15 +28,17 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter:[[ 'html'],['allure-playwright']],
 
+
+  //testMatch:["tests/tags.test.ts"],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-
+   
     trace: 'on',
-    headless:true,
+    headless:false,
     screenshot:'only-on-failure',
     video:'retain-on-failure',
   },
@@ -45,7 +50,7 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
+   /* {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
