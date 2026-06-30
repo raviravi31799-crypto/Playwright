@@ -1,0 +1,22 @@
+[{
+    "testname":"ValidLogin",
+    "username":"Admin@5",
+    "password":"12345",
+    "expectedResult":"Success",
+    "ExpectedMessage":"Welcome"
+},
+{
+    "testname":"InvalidLogin",
+    "username":"Admin@5",
+    "password":"admin",
+    "expectedResult":"Failure",
+    "ExpectedMessage":"Wrong password."
+},
+{
+    "testname":"Blank Username",
+    "username":"",
+    "password":"12345",
+    "expectedResult":"Failure",
+    "ExpectedMessage":"Please fill out Username and Password."
+}
+]

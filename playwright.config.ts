@@ -13,8 +13,10 @@ const envName=process.env.ENV
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
- // repeatEach:2,
+  //globalTimeout:40000,
 
+  //repeatEach:2,
+ 
   //retries:2,
   testDir: './tests',
   /* Run tests in files in parallel */
